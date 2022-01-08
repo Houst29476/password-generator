@@ -71,14 +71,17 @@ function generatePassword () {
     }
   }
 
+  // this randomizes the password
+  for (var i = 0; i < userInput; i++){
+    var random = Math.floor(Math.random() * passwordHolder.length);
 
-  
+    password = password + passwordHolder[random];
+  }
+
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
 }
-
-
-passwordText.value = password;
-
-var passwordText = document.querySelector("#password");
 
 // Pseudo Code
 // 1. create arrays for letters, numbers, and special characters.
