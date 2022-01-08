@@ -24,14 +24,31 @@ function generatePassword () {
 
   var userInput = parseInt(prompt("Choose a number between 5 and 120."));
 
+  // Making sure the user inputs a number that is between 8 and 128.
+  if (!userInput) {
+    alert("Input a value that is a number.");
+    return;
+  }
+  else if ( userInput < 5 || userInput > 120) {
+    alert("Choose a number that is between 5 and 120.");
+    return;
+  }
+  else {
+    alert("Your password will be " + userInput + " characters long.");
+  
+    // filters for your password
+    var filterLower = confirm("Do you want to have lowercase letters in your password?");
+    var filterUpper = confirm("Do you want to have uppercase letters in your password?");
+    var filterNumber = confirm("Do you want to have numbers in your password?");
+    var filterSymbols = confirm("Do you want to have symbols in your password?");
+  }
 
-
-
-
-  passwordText.value = password;
+  
 
 }
 
+
+passwordText.value = password;
 
 var passwordText = document.querySelector("#password");
 
