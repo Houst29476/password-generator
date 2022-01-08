@@ -43,8 +43,36 @@ function generatePassword () {
     var filterSymbols = confirm("Do you want to have symbols in your password?");
   }
 
-  
+  // user has to choose at least one of the confirms above
+  if (!filterLower && !filterUpper && !filterNumber && !filterSymbols) {
+    alert("Choose at least one of the conditions in order to generate your password.");
+    return;
+  }
 
+  // create for loops for each of the confirms whether they are true or false
+  if (filterLower === true) {
+    for (var i = 0; i < lowerCase.length; i++) {
+      passwordHolder.push(lowerCase[i]);
+    }
+  }
+  if (filterUpper === true) {
+    for (var i = 0; i < upperCase.length; i++) {
+      passwordHolder.push(upperCase[i]);
+    }
+  }
+  if (filterNumber === true) {
+    for (var i = 0; i < number.length; i++) {
+      passwordHolder.push(number[i]);
+    }
+  }
+  if (filterSymbols === true) {
+    for (var i = 0; i < symbols.length; i++) {
+      passwordHolder.push(symbols[i]);
+    }
+  }
+
+
+  
 }
 
 
